@@ -1,10 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Prabhu Enterprises - AC Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabhu Enterprises | HVAC Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0f1e;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Animated background gradient */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0f1e 0%, #0d1a2b 50%, #0a1622 100%);
+            z-index: -2;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 150, 255, 0.08), transparent 50%);
+            animation: moveBg 20s ease infinite;
+        }
+
+        @keyframes moveBg {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-10%, -10%);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 15, 30, 0.7);
+            border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00aaff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00aaff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6rem 8% 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #00aaff;
+            text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin: 1.5rem 0;
+            max-width: 500px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #00aaff, #0066aa);
+            border-radius: 40px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+        }
+
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 170, 255, 0.5);
+        }
+
+        .hero-stats {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 170, 255, 0.2);
+            min-width: 130px;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: #00aaff;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 8%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title span {
+            color: #00aaff;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 170, 255, 0.15);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #00aaff;
+            box-shadow: 0 0 30px rgba(0, 170, 255, 0.2);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #00aaff;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 8%;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #00aaff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 170, 255, 0.2);
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content p {
+                margin: 1.5rem auto;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Prabhu Enterprises</h1>
-    <p>Professional AC Installation, Repair & Maintenance</p>
+    <div class="bg-animation"></div>
+
+    <nav class="navbar">
+        <div class="logo"><span>❄️</span> PRABHU ENTERPRISES</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cool Comfort, <span>Smart Solutions</span></h1>
+            <p>Professional HVAC services for homes and businesses. Installation, repair, and maintenance you can trust.
+            </p>
+            <a href="#" class="cta">Get Free Quote →</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Projects</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Satisfaction</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="section-title">Our <span>Services</span></h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-wrench"></i>
+                <h3>AC Repair</h3>
+                <p>Fast, reliable repair for all AC brands</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-box"></i>
+                <h3>Installation</h3>
+                <p>Professional installation by experts</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-snowplow"></i>
+                <h3>Maintenance</h3>
+                <p>Regular checkups & preventive care</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-wind"></i>
+                <h3>Ventilation</h3>
+                <p>Fresh air solutions for your space</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Get in <span>Touch</span></h2>
+        <div class="contact-info">
+            <div class="contact-item"><i class="fas fa-phone"></i> <span>+91 9892256851 / +91 9860827722</span></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> <span>prabhuenterprises@gmx.com</span></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Unit No.1, Bhagwansing Colony, Nr. Bldg. 6, Besides Post Office, SB Road, Mahim (W), Mumbai- 400016</span></div>
+        </div>
+        <a href="#" class="cta">Call Now</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Prabhu Enterprises. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
