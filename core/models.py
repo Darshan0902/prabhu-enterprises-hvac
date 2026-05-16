@@ -1,3 +1,16 @@
 from django.db import models
 
-# Create your models here.
+class Client(models.Model):
+    name = models.CharField(max_length=100, help_text="Client/Company name")
+    logo = models.ImageField(upload_to='clients/', help_text="Client logo image (preferably PNG with transparent bg)")
+    website_url = models.URLField(blank=True, null=True, help_text="Optional client website link")
+    order = models.IntegerField(default=0, help_text="Order in scrolling belt (lower = appears earlier)")
+    is_active = models.BooleanField(default=True, help_text="Show this client on website")
+    
+    class Meta:
+        ordering = ['order']
+        verbose_name = "Client"
+        verbose_name_plural = "Clients"
+    
+    def __str__(self):
+        return self.name

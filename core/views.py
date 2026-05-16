@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Client
 
 def home(request):
-    return render(request, 'core/home.html')
+    clients = Client.objects.filter(is_active=True)
+    return render(request, 'core/home.html', {'clients': clients})

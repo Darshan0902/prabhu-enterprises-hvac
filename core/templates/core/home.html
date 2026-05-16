@@ -129,6 +129,44 @@
     </section>
 
     <!-- ============================================
+    SCROLLING CLIENT BELT SECTION
+    ============================================= -->
+    <section class="clients-section">
+        <h2 class="section-title">Our <span>Trusted Clients</span></h2>
+        <div class="client-belt-container">
+            <div class="client-belt">
+                <div class="client-belt-wrapper">
+                    {% for client in clients %}
+                    <div class="client-item">
+                        {% if client.website_url %}
+                        <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                        </a>
+                        {% else %}
+                        <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Duplicate for seamless scrolling -->
+                <div class="client-belt-wrapper">
+                    {% for client in clients %}
+                    <div class="client-item">
+                        {% if client.website_url %}
+                        <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                        </a>
+                        {% else %}
+                        <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     CONTACT SECTION - BUSINESS DETAILS
     ============================================= -->
     <section id="contact" class="contact">
