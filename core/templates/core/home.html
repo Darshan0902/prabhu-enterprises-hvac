@@ -1,237 +1,139 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <!-- ============================================
-    PAGE METADATA & SEO
-    ============================================= -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Prabhu Enterprises - Best AC Repair & HVAC Services in Mumbai. 24/7 emergency support for AC installation, repair, maintenance. Call +91 98922 56851">
-    <meta name="keywords"
-        content="AC repair Mumbai, HVAC services Mahim, AC installation Bandra, AC maintenance Dadar, duct cleaning, gas refilling">
-    <meta name="author" content="Prabhu Enterprises">
-    <title>Prabhu Enterprises | Best HVAC Services in Mumbai</title>
+{% block title %}Prabhu Enterprises | Best HVAC Services in Mumbai{% endblock %}
 
-    <!-- ============================================
-    EXTERNAL STYLESHEETS & FONTS
-    ============================================= -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-</head>
+{% block content %}
+<!-- ============================================
+HERO SECTION WITH AC BLOWING BACKGROUND
+============================================= -->
+<section class="hero ac-header">
+    <!-- AC Blowing Animation Background -->
+    <div class="ac-bg-overlay">
+        <img src="{% static 'core/images/ac-blow.gif' %}" alt="AC blowing cold air animation" class="ac-bg-gif" loop
+            autoplay muted>
+    </div>
 
-<body>
-    <!-- ============================================
-    BACKGROUND ANIMATION LAYER
-    ============================================= -->
-    <div class="bg-animation"></div>
+    <!-- Hero Content Layer -->
+    <div class="hero-content ac-content">
+        <h1>Heating & Air Conditioning <span>Specialists</span></h1>
+        <p>We are the experts in HVAC services — a trusted company delivering high-quality cooling solutions since
+            <strong>1992</strong>. With over <strong>three decades</strong> of industry experience, we take pride in our
+            commitment to <strong>excellence, reliability, and customer satisfaction</strong>. From advanced air
+            conditioning
+            solutions to <strong>energy-efficient systems</strong>, we provide expert service tailored to
+            <strong>residential
+                and commercial needs</strong>. Discover our journey, explore the latest HVAC innovations, and learn
+            smart
+            energy-saving tips from industry professionals you can trust.
+        </p>
+        <a href="tel:+919892256851" class="cta">Call Now: +91 98922 56851 →</a>
+    </div>
 
-    <!-- ============================================
-    NAVIGATION BAR (FIXED AT TOP)
-    ============================================= -->
-    <nav class="navbar">
-        <div class="logo">
-            <div class="logo-placeholder">PE</div>
-            <span>PRABHU ENTERPRISES</span>
+    <!-- Stats Cards -->
+    <div class="hero-stats">
+        <div class="stat">
+            <h3>30+</h3>
+            <p>Years of Experience</p>
         </div>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+        <div class="stat">
+            <h3>5000+</h3>
+            <p>Happy Customers</p>
         </div>
-    </nav>
-
-    <!-- ============================================
-    HERO SECTION WITH AC BLOWING BACKGROUND
-    ============================================= -->
-    <section class="hero ac-header">
-        <!-- AC Blowing Animation Background -->
-        <div class="ac-bg-overlay">
-            <img src="{% static 'core/images/ac-blow.gif' %}" alt="AC blowing cold air animation" class="ac-bg-gif" loop
-                autoplay muted>
+        <div class="stat">
+            <h3>24/7</h3>
+            <p>Emergency Support</p>
         </div>
+    </div>
+</section>
 
-        <!-- Hero Content Layer -->
-        <div class="hero-content ac-content">
-            <h1>Best AC Repair & HVAC Services in <span>Mumbai</span></h1>
-            <p>Professional air conditioning installation, repair, and maintenance services for home and office. 24/7
-                emergency support in Mahim, Bandra, Dadar & all over Mumbai.</p>
-            <a href="tel:+919892256851" class="cta">Call Now: +91 98922 56851 →</a>
+<!-- ============================================
+SERVICES SECTION - CORE HVAC OFFERINGS
+============================================= -->
+<section id="services" class="services">
+    <h2 class="section-title">Our <span>HVAC Services</span> in Mumbai</h2>
+    <div class="service-grid">
+        <!-- Service Card 1: AC Repair -->
+        <div class="service-card">
+            <i class="fas fa-wrench"></i>
+            <h3>AC Repair</h3>
+            <p>Fast repair for all brands - LG, Samsung, Voltas, Daikin, Blue Star, Hitachi</p>
         </div>
 
-        <!-- Stats Cards -->
-        <div class="hero-stats">
-            <div class="stat">
-                <h3>500+</h3>
-                <p>Projects Completed</p>
-            </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
-            </div>
-            <div class="stat">
-                <h3>24/7</h3>
-                <p>Emergency Support</p>
-            </div>
+        <!-- Service Card 2: AC Installation -->
+        <div class="service-card">
+            <i class="fas fa-box"></i>
+            <h3>AC Installation</h3>
+            <p>New AC installation with warranty & best rates</p>
         </div>
-    </section>
 
-    <!-- ============================================
-    SERVICES SECTION - CORE HVAC OFFERINGS
-    ============================================= -->
-    <section id="services" class="services">
-        <h2 class="section-title">Our <span>HVAC Services</span> in Mumbai</h2>
-        <div class="service-grid">
-            <!-- Service Card 1: AC Repair -->
-            <div class="service-card">
-                <i class="fas fa-wrench"></i>
-                <h3>AC Repair</h3>
-                <p>Fast repair for all brands - LG, Samsung, Voltas, Daikin, Blue Star, Hitachi</p>
-            </div>
-
-            <!-- Service Card 2: AC Installation -->
-            <div class="service-card">
-                <i class="fas fa-box"></i>
-                <h3>AC Installation</h3>
-                <p>New AC installation with warranty & best rates</p>
-            </div>
-
-            <!-- Service Card 3: AC Maintenance -->
-            <div class="service-card">
-                <i class="fas fa-snowplow"></i>
-                <h3>AC Maintenance</h3>
-                <p>Yearly maintenance contracts (AMC) for residential & commercial</p>
-            </div>
-
-            <!-- Service Card 4: Duct Cleaning -->
-            <div class="service-card">
-                <i class="fas fa-wind"></i>
-                <h3>Duct Cleaning</h3>
-                <p>Professional duct cleaning & ventilation solutions</p>
-            </div>
-
-            <!-- Service Card 5: Gas Refilling -->
-            <div class="service-card">
-                <i class="fas fa-temperature-low"></i>
-                <h3>Gas Refilling</h3>
-                <p>All types of refrigerant gas refilling (R22, R32, R410A)</p>
-            </div>
-
-            <!-- Service Card 6: Commercial HVAC -->
-            <div class="service-card">
-                <i class="fas fa-building"></i>
-                <h3>Commercial HVAC</h3>
-                <p>For offices, restaurants, shops & industrial spaces</p>
-            </div>
+        <!-- Service Card 3: AC Maintenance -->
+        <div class="service-card">
+            <i class="fas fa-snowplow"></i>
+            <h3>AC Maintenance</h3>
+            <p>Yearly maintenance contracts (AMC) for residential & commercial</p>
         </div>
-    </section>
 
-    <!-- ============================================
-    SCROLLING CLIENT BELT SECTION
-    ============================================= -->
-    <section class="clients-section">
-        <h2 class="section-title">Our <span>Trusted Clients</span></h2>
-        <div class="client-belt-container">
-            <div class="client-belt">
-                <div class="client-belt-wrapper">
-                    {% for client in clients %}
-                    <div class="client-item">
-                        {% if client.website_url %}
-                        <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ client.logo.url }}" alt="{{ client.name }}">
-                        </a>
-                        {% else %}
+        <!-- Service Card 4: Duct Cleaning -->
+        <div class="service-card">
+            <i class="fas fa-wind"></i>
+            <h3>Duct Cleaning</h3>
+            <p>Professional duct cleaning & ventilation solutions</p>
+        </div>
+
+        <!-- Service Card 5: Gas Refilling -->
+        <div class="service-card">
+            <i class="fas fa-temperature-low"></i>
+            <h3>Gas Refilling</h3>
+            <p>All types of refrigerant gas refilling (R22, R32, R410A)</p>
+        </div>
+
+        <!-- Service Card 6: Commercial HVAC -->
+        <div class="service-card">
+            <i class="fas fa-building"></i>
+            <h3>Commercial HVAC</h3>
+            <p>For offices, restaurants, shops & industrial spaces</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+SCROLLING CLIENT BELT SECTION
+============================================= -->
+<section class="clients-section">
+    <h2 class="section-title">Our <span>Trusted Clients</span></h2>
+    <div class="client-belt-container">
+        <div class="client-belt">
+            <div class="client-belt-wrapper">
+                {% for client in clients %}
+                <div class="client-item">
+                    {% if client.website_url %}
+                    <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
                         <img src="{{ client.logo.url }}" alt="{{ client.name }}">
-                        {% endif %}
-                    </div>
-                    {% endfor %}
+                    </a>
+                    {% else %}
+                    <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                    {% endif %}
                 </div>
-                <!-- Duplicate for seamless scrolling -->
-                <div class="client-belt-wrapper">
-                    {% for client in clients %}
-                    <div class="client-item">
-                        {% if client.website_url %}
-                        <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ client.logo.url }}" alt="{{ client.name }}">
-                        </a>
-                        {% else %}
+                {% endfor %}
+            </div>
+            <!-- Duplicate for seamless scrolling -->
+            <div class="client-belt-wrapper">
+                {% for client in clients %}
+                <div class="client-item">
+                    {% if client.website_url %}
+                    <a href="{{ client.website_url }}" target="_blank" rel="noopener noreferrer">
                         <img src="{{ client.logo.url }}" alt="{{ client.name }}">
-                        {% endif %}
-                    </div>
-                    {% endfor %}
+                    </a>
+                    {% else %}
+                    <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                    {% endif %}
                 </div>
+                {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================
-    CONTACT SECTION - BUSINESS DETAILS
-    ============================================= -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get in <span>Touch</span></h2>
-        <div class="contact-info">
-            <!-- Phone Numbers -->
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>
-                    <a href="tel:+919892256851">+91 98922 56851</a> /
-                    <a href="tel:+919860827722">+91 98608 27722</a>
-                </span>
-            </div>
 
-            <!-- Email Address -->
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>
-                    <a href="mailto:prabhuenterprises@gmx.com">prabhuenterprises@gmx.com</a>
-                </span>
-            </div>
-
-            <!-- Physical Address -->
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Unit No.1, Bhagwansing Colony, Nr. Bldg. 6, Besides Post Office, SB Road, Mahim (W),
-                    Mumbai-400016</span>
-            </div>
-        </div>
-        <a href="tel:+919892256851" class="cta">Call Now for Free Quote</a>
-    </section>
-
-    <!-- ============================================
-    FOOTER SECTION
-    ============================================= -->
-    <footer>
-        <p>© 2025 Prabhu Enterprises | HVAC Services in Mahim, Bandra, Dadar, Andheri, South Mumbai | All rights
-            reserved.</p>
-    </footer>
-
-    <!-- ============================================
-    SCHEMA MARKUP FOR LOCAL BUSINESS SEO
-    ============================================= -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HVACBusiness",
-        "name": "Prabhu Enterprises",
-        "image": "",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Unit No.1, Bhagwansing Colony, Nr. Bldg. 6, Besides Post Office, SB Road, Mahim (W)",
-            "addressLocality": "Mumbai",
-            "addressRegion": "Maharashtra",
-            "postalCode": "400016",
-            "addressCountry": "IN"
-        },
-        "telephone": "+919892256851",
-        "email": "prabhuenterprises@gmx.com",
-        "areaServed": ["Mahim", "Bandra", "Dadar", "Andheri", "South Mumbai"],
-        "priceRange": "₹₹",
-        "openingHours": "Mo-Su 07:00-21:00",
-        "sameAs": []
-    }
-    </script>
-</body>
-
-</html>
+{% endblock %}
