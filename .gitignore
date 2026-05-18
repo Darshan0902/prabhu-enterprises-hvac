@@ -12,12 +12,10 @@ dist/
 build/
 
 # Django
-db.sqlite3
+
 *.log
 .env
-media/
-staticfiles/
-static/
+
 
 # IDE
 .vscode/
