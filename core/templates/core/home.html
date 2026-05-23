@@ -4,11 +4,16 @@
 {% block title %}Prabhu Enterprises | Best HVAC Services in Mumbai{% endblock %}
 
 {% block content %}
+<!-- Top GIF Banner -->
+
 <!-- ============================================
 HERO SECTION WITH AC BLOWING BACKGROUND
 ============================================= -->
 <section class="hero ac-header">
     <!-- AC Blowing Animation Background -->
+    <!-- <div class="hero-top-gif">
+        <img src="{% static 'core/images/air-conditioner.gif' %}" alt="AC Cooling Animation" class="hero-top-gif-img">
+    </div> -->
     <div class="ac-bg-overlay">
         <img src="{% static 'core/images/ac-blow.gif' %}" alt="AC blowing cold air animation" class="ac-bg-gif" loop
             autoplay muted>
@@ -30,7 +35,7 @@ HERO SECTION WITH AC BLOWING BACKGROUND
         <a href="tel:+919892256851" class="cta">Call Now: +91 98922 56851 →</a>
     </div>
 
-    <!-- Stats Cards -->
+    <!-- Stats Cards - Vertical touching -->
     <div class="hero-stats">
         <div class="stat">
             <h3>30+</h3>
@@ -45,8 +50,21 @@ HERO SECTION WITH AC BLOWING BACKGROUND
             <p>Emergency Support</p>
         </div>
     </div>
-</section>
 
+    <!-- Hero Center Section with GIF and Motto -->
+    <div class="hero-center-section">
+        <!-- AC Cooling GIF -->
+        <div class="hero-center-gif">
+            <img src="https://media.giphy.com/media/YH5MMgQQR93Rxg7mz5/giphy.gif" alt="HVAC Cooling Service" class="hero-center-gif-img" loading="lazy">
+        </div>
+        
+        <!-- Motto/Tagline -->
+        <div class="hero-motto">
+            <p class="motto-text">Cool Comfort, <span>Anytime Anywhere</span></p>
+            <div class="motto-divider"></div>
+        </div>
+    </div>
+</section>
 <!-- ============================================
 SERVICES SECTION - CORE HVAC OFFERINGS
 ============================================= -->
@@ -204,5 +222,24 @@ SCROLLING CLIENT BELT SECTION
     </div>
 </section>
 
+<!-- Scroll Animation for Stats Cards -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stats = document.querySelectorAll('.stat');
 
+        function checkScroll() {
+            stats.forEach(stat => {
+                const statTop = stat.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (statTop < windowHeight - 100) {
+                    stat.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        checkScroll();
+    });
+</script>
 {% endblock %}
