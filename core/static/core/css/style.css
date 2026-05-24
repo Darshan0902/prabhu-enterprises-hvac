@@ -1133,79 +1133,69 @@ WHY CHOOSE US - 50/50 LAYOUT
 }
 
 /* ============================================
-HERO CENTER SECTION - GIF & MOTTO
+HERO CENTER SECTION - ROTATING QUOTE CARD & MOTTO
 ============================================= */
 .hero-center-section {
-    flex: 0.6;
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
     min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     animation: slideInRight 0.8s ease-out;
 }
 
-.hero-center-gif {
-    width: 100%;
-    max-width: 280px;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(0, 170, 255, 0.1), rgba(0, 100, 200, 0.05));
-    border: 2px solid rgba(0, 170, 255, 0.3);
-    border-radius: 25px;
-    padding: 1.5rem;
-    box-shadow: 0 15px 50px rgba(0, 170, 255, 0.15);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.hero-quote-box {
+    width: min(100%, 760px);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 170, 255, 0.16);
+    border-radius: 30px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 28px 60px rgba(0, 170, 255, 0.08);
+    text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-/* Glow effect background */
-.hero-center-gif::before {
+.hero-quote-box::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(0, 170, 255, 0.2), transparent 70%);
-    animation: breathe 3s ease-in-out infinite;
-    z-index: 0;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(0, 170, 255, 0.08), transparent 45%);
+    pointer-events: none;
 }
 
-@keyframes breathe {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.8;
-    }
-}
-
-.hero-center-gif:hover {
-    transform: scale(1.08);
-    border-color: #00aaff;
-    box-shadow: 0 25px 70px rgba(0, 170, 255, 0.3);
-}
-
-.hero-center-gif-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(0, 170, 255, 0.3));
-    transition: all 0.4s ease;
+.hero-quote-text {
     position: relative;
-    z-index: 1;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.45s ease;
 }
 
-.hero-center-gif:hover .hero-center-gif-img {
-    filter: drop-shadow(0 0 25px rgba(0, 170, 255, 0.5));
+.hero-quote-subtext {
+    position: relative;
+    margin-top: 1rem;
+    color: #c8e6ff;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.hero-quote-text.fade-out {
+    opacity: 0;
+}
+
+.hero-quote-text.fade-in {
+    opacity: 1;
 }
 
 /* Hero Motto Section */

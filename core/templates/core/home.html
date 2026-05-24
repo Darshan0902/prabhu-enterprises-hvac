@@ -51,13 +51,13 @@ HERO SECTION WITH AC BLOWING BACKGROUND
         </div>
     </div>
 
-    <!-- Hero Center Section with GIF and Motto -->
+    <!-- Hero Center Section with rotating headline quote -->
     <div class="hero-center-section">
-        <!-- AC Cooling GIF -->
-        <div class="hero-center-gif">
-            <img src="https://media.giphy.com/media/YH5MMgQQR93Rxg7mz5/giphy.gif" alt="HVAC Cooling Service" class="hero-center-gif-img" loading="lazy">
+        <div class="hero-quote-box" aria-live="polite">
+            <p class="hero-quote-text" id="heroQuote">We Bring the Chill And the Heat</p>
+            <p class="hero-quote-subtext">Comfort that keeps your home feeling just right.</p>
         </div>
-        
+
         <!-- Motto/Tagline -->
         <div class="hero-motto">
             <p class="motto-text">Cool Comfort, <span>Anytime Anywhere</span></p>
@@ -65,6 +65,43 @@ HERO SECTION WITH AC BLOWING BACKGROUND
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quotes = [
+            'We Bring the Chill And the Heat',
+            'Because Sweating Indoors Is Optional',
+            'Don’t Sweat It. Call Us.',
+            'Turning “Brrr” Into “Ahhh”',
+            'Keeping You Cool When Life Heats Up',
+            'We Fix Comfort Breakdowns',
+            'Your Comfort, No Hot Air',
+            'Stop Fighting the Thermostat',
+            'From Freezing to Fabulous',
+            'Comfort So Good, You’ll Feel It',
+            'We Take the Heat Literally',
+            'Bringing Balance Back to Your Thermostat',
+            'When Your HVAC Quits, We Don’t',
+            'Less Sweat. More Comfort.',
+            'Stay Cool. We’re On It.'
+        ];
+
+        const quoteEl = document.getElementById('heroQuote');
+        let index = 1;
+
+        setInterval(() => {
+            quoteEl.classList.remove('fade-in');
+            quoteEl.classList.add('fade-out');
+
+            setTimeout(() => {
+                quoteEl.textContent = quotes[index];
+                quoteEl.classList.remove('fade-out');
+                quoteEl.classList.add('fade-in');
+                index = (index + 1) % quotes.length;
+            }, 400);
+        }, 5200);
+    });
+</script>
 <!-- ============================================
 SERVICES SECTION - CORE HVAC OFFERINGS
 ============================================= -->
