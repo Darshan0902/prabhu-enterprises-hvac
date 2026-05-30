@@ -13,6 +13,7 @@
     <meta name="keywords"
         content="AC repair Mumbai, HVAC services Mahim, AC installation Bandra, AC maintenance Dadar, duct cleaning, gas refilling">
     <meta name="author" content="Prabhu Enterprises">
+    {% block extra_meta %}{% endblock %}
     <title>{% block title %}Prabhu Enterprises | Best HVAC Services in Mumbai{% endblock %}</title>
 
     <!-- ============================================
@@ -24,6 +25,8 @@
     <!-- ============================================
     PAGE SPECIFIC CSS
     ============================================= -->
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -79,6 +82,8 @@
     <!-- ============================================
     PAGE SPECIFIC JS
     ============================================= -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
 
