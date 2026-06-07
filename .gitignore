@@ -14,7 +14,7 @@ build/
 # Django
 
 *.log
-.env
+# .env
 
 
 # IDE
