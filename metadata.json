@@ -1,0 +1,6 @@
+{
+  "name": "Prabhu Enterprises",
+  "description": "Prabhu Enterprises - Standard of HVAC excellence in Mumbai since 1992. Over 30 years of expert air conditioning, cassette systems, and central chill-water installations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
