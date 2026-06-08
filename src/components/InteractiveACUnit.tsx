@@ -119,7 +119,7 @@ export default function InteractiveACUnit() {
                 <AnimatedLogo size={36} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xs md:text-sm font-display uppercase tracking-widest" style={{ color: '#f300ff', fontWeight: 'bold' }}>
+                <span className="text-xs md:text-sm font-display uppercase tracking-widest" style={{ color: '#000000', fontWeight: 'bold' }}>
                   PRABHU ENTERPRISES
                 </span>
                 <span className="font-mono text-[9px] font-black uppercase tracking-widest mt-0.5" style={{ borderColor: '#ee0063', color: '#ff00ff' }}>
