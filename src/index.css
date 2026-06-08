@@ -18,16 +18,16 @@
 
 /* Global design rules for cards in deep navy/black with orange-red and pink accents */
 .bg-cyber-card {
-  background-color: #0a0e17 !important;
-  color: #f3f4f6 !important;
-  border-color: #ff4500 !important;
-  border-width: 2px !important;
+  background-color: #050b14 !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 69, 0, 0.2) !important;
+  border-width: 1px !important;
   transition: all 0.3s ease !important;
 }
 
 .bg-cyber-card:hover {
-  border-color: #ff69b4 !important;
-  box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2) !important;
+  border-color: rgba(255, 105, 180, 0.45) !important;
+  box-shadow: 0 12px 32px rgba(255, 69, 0, 0.06) !important;
 }
 
 .bg-cyber-card h1,
@@ -36,19 +36,20 @@
 .bg-cyber-card h4 {
   color: #ffffff !important;
   font-family: var(--font-display) !important;
-  font-weight: 900 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
 }
 
 .bg-cyber-card p,
 .bg-cyber-card span,
 .bg-cyber-card li {
-  color: #d1d5db !important;
-  font-weight: 500 !important;
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
 }
 
 .bg-cyber-card label {
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .bg-cyber-card .text-slate-100,
@@ -56,7 +57,7 @@
 .bg-cyber-card .text-slate-300,
 .bg-cyber-card .text-slate-400,
 .bg-cyber-card .text-slate-500 {
-  color: #e5e7eb !important;
+  color: #cbd5e1 !important;
 }
 
 .bg-cyber-card .text-white {
@@ -68,19 +69,19 @@
 .bg-cyber-card .text-[#ff4500],
 .bg-cyber-card .text-orange-red {
   color: #ff4500 !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
 }
 
 .bg-cyber-card .text-cold-secondary,
 .bg-cyber-card .text-[#ff69b4] {
   color: #ff69b4 !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
 }
 
 .bg-cyber-card .border-slate-800,
 .bg-cyber-card .border-slate-900,
 .bg-cyber-card .border-cyber-border {
-  border-color: rgba(255, 69, 0, 0.4) !important;
+  border-color: rgba(255, 69, 0, 0.15) !important;
 }
 
 .bg-cyber-card .bg-slate-950,
@@ -89,8 +90,8 @@
 .bg-cyber-card .bg-slate-950\/90,
 .bg-cyber-card .bg-slate-950\/40,
 .bg-cyber-card .bg-slate-950\/20 {
-  background-color: #030712 !important;
-  border-color: rgba(255, 69, 0, 0.4) !important;
+  background-color: #01040a !important;
+  border-color: rgba(255, 69, 0, 0.15) !important;
 }
 
 .bg-cyber-card .bg-slate-950 p,
@@ -109,21 +110,28 @@
 .bg-cyber-card input,
 .bg-cyber-card select,
 .bg-cyber-card textarea {
-  background-color: #030712 !important;
+  background-color: #01040a !important;
   color: #ffffff !important;
-  border: 1.5px solid #ff4500 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  outline: none !important;
+}
+
+.bg-cyber-card input:focus,
+.bg-cyber-card select:focus,
+.bg-cyber-card textarea:focus {
+  border-color: rgba(255, 105, 180, 0.4) !important;
 }
 
 .bg-cyber-card button:not(.bg-accent-primary):not(.bg-[#ff4500]):not(.bg-[#ff69b4]):not(.bg-blue-600) {
-  background-color: #ff4500 !important;
-  color: #ffffff !important;
-  border-color: #ff4500 !important;
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .bg-cyber-card button:hover:not(.bg-accent-primary):not(.bg-[#ff4500]):not(.bg-[#ff69b4]):not(.bg-blue-600) {
-  background-color: #ff69b4 !important;
+  background-color: #1e293b !important;
   color: #ffffff !important;
-  border-color: #ff69b4 !important;
+  border-color: rgba(255, 105, 180, 0.3) !important;
 }
 
 @layer utilities {

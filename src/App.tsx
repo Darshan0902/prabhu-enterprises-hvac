@@ -27,7 +27,7 @@ import IndiaMapClusters from "./components/IndiaMapClusters";
 import CoolingCalculator from "./components/CoolingCalculator";
 import ClientMarquee from "./components/ClientMarquee";
 import ClientFeedbackSection from "./components/ClientFeedbackSection";
-import AdminPortal from "./components/AdminPortal";
+import ClientFeedbackLedger from "./components/ClientFeedbackLedger";
 import TimelineChronicle from "./components/TimelineChronicle";
 import SEOSchema from "./components/SEOSchema";
 import { FAQ_DATA, HVAC_SERVICES, SERVICES_PROCESS_STEPS } from "./types";
@@ -47,12 +47,12 @@ const COLOR_THEMES = [
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<"home" | "about" | "services" | "contact" | "admin">(() => {
+  const [activeTab, setActiveTab] = useState<"home" | "about" | "services" | "contact" | "reviews">(() => {
     if (typeof window !== "undefined") {
       const pathname = window.location.pathname;
       const hash = window.location.hash;
       if (pathname === "/darshan-papa" || hash === "#darshan-papa") {
-        return "admin";
+        return "reviews";
       }
     }
     return "home";
@@ -67,8 +67,8 @@ export default function App() {
       const pathname = window.location.pathname;
       const hash = window.location.hash;
       if (pathname === "/darshan-papa" || hash === "#darshan-papa") {
-        setActiveTab("admin");
-      } else if (activeTab === "admin") {
+        setActiveTab("reviews");
+      } else if (activeTab === "reviews") {
         setActiveTab("home");
       }
     };
@@ -82,7 +82,7 @@ export default function App() {
 
   // Synchronize active tab selections back onto address bar
   React.useEffect(() => {
-    if (activeTab === "admin") {
+    if (activeTab === "reviews") {
       const pathname = window.location.pathname;
       const hash = window.location.hash;
       if (pathname !== "/darshan-papa" && hash !== "#darshan-papa") {
@@ -142,10 +142,10 @@ export default function App() {
     { id: "contact", label: "Contact" }
   ];
 
-  // Intercept and load the standalone admin dashboard module
-  if (activeTab === "admin") {
+  // Intercept and load the standalone public feedback ledger module
+  if (activeTab === "reviews") {
     return (
-      <AdminPortal onBackToPublic={() => setActiveTab("home")} />
+      <ClientFeedbackLedger onBackToPublic={() => setActiveTab("home")} />
     );
   }
 
@@ -918,15 +918,10 @@ export default function App() {
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs md:text-sm font-sans rounded-lg leading-relaxed text-center space-y-2"
+                        className="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs md:text-sm font-sans rounded-lg leading-relaxed text-center"
                       >
-                        <p className="font-bold">🌟 Request Registered & Dispatch Signal Routed successfully!</p>
-                        <p className="text-slate-300">
-                          We have received your email details. Formatted template alerts were dispatched directly to both admin portals at <span className="text-[#ff69b4] font-semibold">prabhudarshan09@gmail.com</span> and <span className="text-[#ff69b4] font-semibold">prabhuenterprises@gmx.com</span>.
-                        </p>
-                        <hr className="border-emerald-500/20" />
-                        <p className="text-[11px] text-slate-400 italic">
-                          A copy of this inquiry has been mailed to your email address as well. Our engineering division will get back to you within <strong>the next 3 business days</strong>. Thank you for your support. Jai Bappa!
+                        <p className="font-semibold text-slate-200">
+                          Your form has been submitted and we will get back to you in the next 48 hours.
                         </p>
                       </motion.div>
                     )}
